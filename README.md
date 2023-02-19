@@ -6,7 +6,6 @@ This is a solution to the [Dictionary web app challenge on Frontend Mentor](http
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
@@ -32,14 +31,10 @@ Users should be able to:
 - See hover and focus states for all interactive elements on the page
 - **Bonus**: Have the correct color scheme chosen for them based on their computer preferences. _Hint_: Research `prefers-color-scheme` in CSS.
 
-### Screenshot
-
-![Link](https://clipchamp.com/watch/YeLxtDy8Z64)
-
 ### Links
 
-- Solution URL: [Solution URL](https://your-solution-url.com)
-- Live Site URL: [Live site URL](https://your-live-site-url.com)
+- Solution URL: [Solution URL](https://github.com/Memeena/dictionary-web-app)
+- Live Site URL: [Live site URL](https://memeena.github.io/dictionary-web-app/)
 
 ## My process
 
