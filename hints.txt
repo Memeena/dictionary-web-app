@@ -1,0 +1,3 @@
+styling for synonym
+font heading while selecting
+optional chaining for playing audio

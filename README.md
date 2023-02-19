@@ -1,70 +1,132 @@
-# Getting Started with Create React App
+# Frontend Mentor - Dictionary web app solution
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a solution to the [Dictionary web app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/dictionary-web-app-h5wwnyuKFL). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-### `npm start`
+## Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### The challenge
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Users should be able to:
 
-### `npm test`
+- Search for words using the input field
+- See the Free Dictionary API's response for the searched word
+- See a form validation message when trying to submit a blank form
+- Play the audio file for a word when it's available
+- Switch between serif, sans serif, and monospace fonts
+- Switch between light and dark themes
+- View the optimal layout for the interface depending on their device's screen size
+- See hover and focus states for all interactive elements on the page
+- **Bonus**: Have the correct color scheme chosen for them based on their computer preferences. _Hint_: Research `prefers-color-scheme` in CSS.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Screenshot
 
-### `npm run build`
+![Link](https://clipchamp.com/watch/YeLxtDy8Z64)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Links
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Solution URL: [Solution URL](https://your-solution-url.com)
+- Live Site URL: [Live site URL](https://your-live-site-url.com)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## My process
 
-### `npm run eject`
+### Built with
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- Desktop-first workflow
+- [React](https://reactjs.org/) - JS library
+- [CSS Modules - For styles
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### What I learned
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Using SVG icons as React Components which enables us to easily modify the image. Usage of "current" for the fill and stroke attributes
 
-## Learn More
+```html
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="22"
+  height="22"
+  viewBox="0 0 22 22"
+  fill="current"
+>
+  <path
+    stroke="current"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="1.5"
+    d="M1 10.449a10.544 10.544 0 0 0 19.993 4.686C11.544 15.135 6.858 10.448 6.858 1A10.545 10.545 0 0 0 1 10.449Z"
+    fill="current"
+  />
+</svg>
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Updating the font of the element using UseEffect Hook.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```js
+useEffect(() => {
+  document.body.style.fontFamily = fontStyle;
+}, [fontStyle]);
+```
 
-### Code Splitting
+- Used optional chaining for getting the audio file from the result data fetched from API to avoid error. Instead of error, it returs the value as "undefined".
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```js
+const url = phonetics.find((i) => i.audio)?.audio;
+```
 
-### Analyzing the Bundle Size
+- Using prefers-color-scheme to get the device selected colour theme and switching the Light/Dark theme accordingly.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```js
+useEffect(() => {
+  window
+    .matchMedia("(prefers-color-scheme:dark)")
+    .addEventListener("change", (event) => {
+      const colorScheme = event.matches ? "dark" : "light";
+      console.log(colorScheme);
+      colorScheme === "dark" ? setDarkMode(true) : setDarkMode(false);
+    });
+}, []);
+```
 
-### Making a Progressive Web App
+- Learnt to use dynamic styles based on the user input like theme switch, font-change.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```js
+const toggleStyle = {
+  left: darkMode ? "2.3rem" : "0.1rem",
+  transition: "all 0.3s ease-out",
+};
+```
 
-### Advanced Configuration
+- Learnt how to module the components which is important in React. And also how to pass variables as props and traversing from child to parent to update the state variables which are used in the parent.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Continued development
 
-### Deployment
+Planning to improve the above challenge to get the input via speech and converting it to text and finding the result.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Useful resources
 
-### `npm run build` fails to minify
+- [Optional chaining](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining) - This helped to learn about optional chaining and how to use in this challenge.
+- [prefers-color-scheme](https://web.dev/prefers-color-scheme/) - This helped me how to handle dark mode in React and how to use prefers-color-scheme to attain the same.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Author
+
+- Frontend Mentor - [@meMeena](https://www.frontendmentor.io/profile/meMeena)
+- Twitter - [@Mekrish18](https://www.twitter.com/MeKrish18)

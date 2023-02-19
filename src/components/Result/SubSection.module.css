@@ -1,0 +1,94 @@
+.meaning {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading {
+  font-size: 2.4rem;
+}
+
+.line {
+  height: 1px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contentHeading {
+  color: #757575;
+  font-size: 2rem;
+}
+
+.list .item {
+  list-style-type: disc;
+  list-style-position: inside;
+  padding: 10px 0 10px 20px;
+  text-indent: -2.3em;
+  margin-left: 2em;
+  line-height: 1.5;
+}
+
+.item {
+  color: #8f19e8;
+  font-size: 1rem;
+}
+
+.span {
+  font-size: 1.8rem;
+  color: #2d2d2d;
+  margin-left: 1rem;
+}
+
+.example {
+  display: block;
+  margin-left: 2.5rem;
+  color: #757575;
+  font-size: 1.8rem;
+  padding: 1rem 0;
+}
+.synonyms {
+  display: flex;
+  gap: 2rem;
+  justify-content: start;
+  align-items: center;
+}
+
+.synonym {
+  font-size: 2rem;
+  color: #a445ed;
+  cursor: pointer;
+}
+
+.synonym:hover {
+  border-bottom: 1px dotted #a445ed;
+}
+
+@media screen and (max-width: 23.75em) {
+  .heading {
+    font-size: 1.8rem;
+  }
+
+  .contentHeading {
+    font-size: 1.6rem;
+  }
+
+  .span {
+    font-size: 1.5rem;
+  }
+
+  .synonym {
+    font-size: 1.6rem;
+  }
+}

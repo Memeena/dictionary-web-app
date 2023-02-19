@@ -1,0 +1,47 @@
+.searchWord {
+  display: grid;
+  gap: 1rem;
+  align-items: center;
+  justify-content: stretch;
+  position: relative;
+}
+
+.inputField {
+  outline: none;
+  width: 100%;
+  border: none;
+  padding: 1rem;
+  border-radius: 1rem;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.inputField:focus {
+  border: 1px solid #a445ed;
+}
+
+.error {
+  color: #ff5252;
+  display: block;
+  width: 100%;
+  font-size: 2rem;
+}
+
+.iconSearch {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  cursor: pointer;
+  transition: all 0.8s ease;
+}
+
+.iconSearch:active {
+  transform: scale(2);
+}
+
+@media screen and (max-width: 23.75em) {
+  .inputField {
+    font-size: 1.6rem;
+  }
+}
